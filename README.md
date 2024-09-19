@@ -1,2 +1,2 @@
-# simple-file-storage-manager
+# Simple file storage manager
 File storage manager on php

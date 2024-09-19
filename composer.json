@@ -1,0 +1,21 @@
+{
+    "name": "ipadd/simple-file-storage-manager",
+    "description": "File storage manager on php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ipadd\\SimpleFileStorageManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Igor Peshkov",
+            "email": "igor.peshkov@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0.0"
+    }
+}

@@ -1,0 +1,8 @@
+# IDE files
+.idea
+
+# Packages
+vendor
+
+
+logs.txt
