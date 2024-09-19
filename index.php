@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/vendor/autoload.php';
+
 const LOG_FILE = 'logs.txt';
 
 function addLogs($ext): void
