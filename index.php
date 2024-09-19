@@ -12,5 +12,6 @@ function addLogs($ext): void
         FILE_APPEND | LOCK_EX);
 }
 
+?>
 
-addLogs($_SERVER);
+<h1>File Storage</h1>
