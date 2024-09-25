@@ -1,12 +1,10 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
-
 const LOG_FILE = 'logs.txt';
-const IMAGE_STORAGE_ROOT = '/var/www/html';
+const IMAGE_STORAGE_ROOT = __DIR__;
 const BASE_PATH = 'img_project';
 
-const STORAGE_PATH = IMAGE_STORAGE_ROOT.'/'.BASE_PATH;
+const STORAGE_PATH = IMAGE_STORAGE_ROOT.DIRECTORY_SEPARATOR.BASE_PATH;
 
 
 function add_logs($ext): void
