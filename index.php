@@ -3,6 +3,11 @@
 require __DIR__ . '/vendor/autoload.php';
 
 const LOG_FILE = 'logs.txt';
+const IMAGE_STORAGE_ROOT = '/var/www/html';
+const BASE_PATH = 'img_project';
+
+const STORAGE_PATH = IMAGE_STORAGE_ROOT.'/'.BASE_PATH;
+
 
 function add_logs($ext): void
 {
@@ -102,7 +107,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' &&
   if ($casino && $category && $env) {
     // create casino folder path
     $base_folder = build_path([
-      __DIR__,
+      STORAGE_PATH,
       $casino,
       $env,
       $category,
@@ -155,7 +160,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'DELETE' 
   if ($casino && $category && $env) {
     // build image paths
     $image_file = build_path([
-      __DIR__,
+      STORAGE_PATH,
       $casino,
       $env,
       $category,
