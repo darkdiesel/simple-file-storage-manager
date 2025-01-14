@@ -15,7 +15,6 @@ function add_logs($ext): void
     FILE_APPEND | LOCK_EX);
 }
 
-
 function build_path(array $path_items): string
 {
   $folder = '';
@@ -42,7 +41,9 @@ function check_dest_folder(array $path_items): string
   }
 
   if (!file_exists($folder)) {
-    mkdir($folder, 0644, true);
+    $oldUmask = umask(0);
+    mkdir($folder, 0764, true);
+    umask($oldUmask);
   }
 
   return $folder;
