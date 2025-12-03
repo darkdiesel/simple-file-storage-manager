@@ -9,9 +9,13 @@ services:
             - '20000:80'
 
     php-fpm:
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
         build: docker/php-fpm
         working_dir: /application
         volumes:
             - '.:/application'
             - './docker/php-fpm/php-ini-overrides.ini:/etc/php/8.3/fpm/conf.d/99-overrides.ini'
             - './docker/php-fpm/php-ini-overrides.ini:/etc/php/8.3/cli/conf.d/99-overrides.ini'
+            - './docker/php-fpm/30-xdebug.ini:/etc/php/8.3/fpm/conf.d/30-xdebug.ini'
+            - './docker/php-fpm/30-xdebug.ini:/etc/php/8.3/cli/conf.d/30-xdebug.ini'
