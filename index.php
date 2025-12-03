@@ -20,6 +20,8 @@ function build_path(array $path_items): string
   $folder = '';
 
   foreach ($path_items as $path_item) {
+    if (!$path_item) continue;
+
     $folder .= $folder ? DIRECTORY_SEPARATOR . $path_item : $path_item;
   }
 
@@ -103,7 +105,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' &&
   $folder = '';
 
   // check if folder for files exist or create it if not
-  if ($casino && $category && $env) {
+  if ($casino && $env) {
     // create casino folder path
     $base_folder = build_path([
       STORAGE_PATH,
@@ -156,7 +158,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'DELETE' 
   $image = (isset($_REQUEST['image'])) ? $_REQUEST['image'] : false;
 
   // check if folder for files exist or create it if not
-  if ($casino && $category && $env) {
+  if ($casino && $env) {
     // build image paths
     $image_file = build_path([
       STORAGE_PATH,
