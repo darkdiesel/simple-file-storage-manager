@@ -140,7 +140,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' &&
     $tmp_file = $_FILES['images']['tmp_name'][$index];
     $dst_file = $upload_file;
 
-    move_uploaded_file($tmp_file, $dst_file);
+    $move_result = move_uploaded_file($tmp_file, $dst_file);
+
+    if (!$move_result) continue;
 
     $response[$image] = build_uri_from_path(str_replace($base_folder, '', $upload_file));
   }
